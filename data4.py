@@ -80,8 +80,15 @@ def generate_appliance_usage_data(num_records, start_year, end_year, power_data)
 
     # Generar datos de uso basados en 'power_data'
     watts_used = np.random.choice(power_data, size=num_records)
+    
+    # Generar la probabilidad y el reporte de fallos
     probability_of_failure = np.random.rand(num_records)
-    report_of_failure = np.random.randint(0, 2, size=num_records)
+    
+    # Aquí generamos el reporte de fallos basado en la probabilidad generada
+    report_of_failure = np.random.binomial(1, probability_of_failure)
+
+    # Calcular el porcentaje de fallos para cada fila
+    failure_percentage = report_of_failure * probability_of_failure * 100
 
     # Crear el DataFrame
     data = {
@@ -89,8 +96,10 @@ def generate_appliance_usage_data(num_records, start_year, end_year, power_data)
         "Hora": hours,
         "Watts usados": watts_used,
         "Probabilidad de fallo": probability_of_failure,
-        "Reporte de fallo": report_of_failure
+        "Porcentaje de fallos": failure_percentage,
+        "Reporte de fallo": report_of_failure,
     }
+    
     df = pd.DataFrame(data)
 
     return df
@@ -103,4 +112,4 @@ end_year = 2023
 df = generate_appliance_usage_data(num_records, start_year, end_year, power_data)
 
 # Guardar el conjunto de datos en un archivo CSV
-df.to_csv("appliance_usage_data.csv", index=False)
+df.to_csv("appliance_usage_data1.csv", index=False)
