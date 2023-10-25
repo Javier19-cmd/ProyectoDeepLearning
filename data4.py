@@ -105,11 +105,15 @@ def generate_appliance_usage_data(num_records, start_year, end_year, power_data)
     return df
 
 # Generar un conjunto de datos de aproximadamente 3 millones de registros
-num_records = 3_000_000  # 3 millones
+num_records = 500_000  # 3 millones
 start_year = 2019
 end_year = 2023
 
 df = generate_appliance_usage_data(num_records, start_year, end_year, power_data)
 
 # Guardar el conjunto de datos en un archivo CSV
-df.to_csv("appliance_usage_data1.csv", index=False)
+df.to_csv("appliance_usage_data16.csv", index=False)
+df.to_csv("appliance_usage_data17.csv", index=False)
+df.to_csv("appliance_usage_data18.csv", index=False)
+df.to_csv("appliance_usage_data19.csv", index=False)
+df.to_csv("appliance_usage_data20.csv", index=False)
