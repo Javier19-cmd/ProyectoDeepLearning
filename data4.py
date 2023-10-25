@@ -112,8 +112,6 @@ end_year = 2023
 df = generate_appliance_usage_data(num_records, start_year, end_year, power_data)
 
 # Guardar el conjunto de datos en un archivo CSV
-df.to_csv("appliance_usage_data16.csv", index=False)
-df.to_csv("appliance_usage_data17.csv", index=False)
-df.to_csv("appliance_usage_data18.csv", index=False)
-df.to_csv("appliance_usage_data19.csv", index=False)
-df.to_csv("appliance_usage_data20.csv", index=False)
+df.to_csv("nuevos_datos4.csv", index=False)
+df.to_csv("nuevos_datos5.csv", index=False)
+df.to_csv("nuevos_datos6.csv", index=False)

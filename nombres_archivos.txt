@@ -88,3 +88,48 @@ file_names = [
     'washing_machine_218.csv',
     'freezer_249.csv'
 ]
+
+datasets = [
+    'appliance_usage_data1.csv',
+    'appliance_usage_data3.csv',
+    'appliance_usage_data4.csv',
+    'appliance_usage_data5.csv',
+    'appliance_usage_data6.csv',
+    'appliance_usage_data7.csv',
+    'appliance_usage_data8.csv',
+    'appliance_usage_data9.csv',
+    'appliance_usage_data10.csv',
+    'appliance_usage_data11.csv',
+    'appliance_usage_data12.csv',
+    'appliance_usage_data13.csv',
+    'appliance_usage_data14.csv',
+    'appliance_usage_data15.csv',
+    'appliance_usage_data16.csv',
+    'appliance_usage_data17.csv',
+    'appliance_usage_data18.csv',
+    'appliance_usage_data19.csv',
+    'appliance_usage_data20.csv',
+]
+
+datasets = [
+    'appliance_usage_data1.csv',
+    'appliance_usage_data2.csv',
+    'appliance_usage_data3.csv',
+    'appliance_usage_data4.csv',
+    'appliance_usage_data5.csv',
+    'appliance_usage_data6.csv',
+    'appliance_usage_data7.csv',
+    'appliance_usage_data8.csv',
+    'appliance_usage_data9.csv',
+    'appliance_usage_data10.csv',
+    'appliance_usage_data11.csv',
+    'appliance_usage_data12.csv',
+    'appliance_usage_data13.csv',
+    'appliance_usage_data14.csv',
+    'appliance_usage_data15.csv',
+    'appliance_usage_data16.csv',
+    'appliance_usage_data17.csv',
+    'appliance_usage_data18.csv',
+    'appliance_usage_data19.csv',
+    'appliance_usage_data20.csv',
+]
