@@ -103,12 +103,28 @@ def generate_appliance_usage_data(num_records, start_year, end_year, power_data)
 
     return df
 
+# Función para generar historial de fallos
+def generate_failure_history(report_of_failure):
+    """
+    Genera un historial de fallos basado en el 'Reporte de fallo' anterior.
+
+    Args:
+        report_of_failure: Serie de Pandas con valores binarios (0 o 1).
+
+    Returns:
+        Serie de Pandas que representa el historial de fallos.
+    """
+    failure_history = report_of_failure.shift(1).fillna(0)  # Shift para obtener el valor anterior, llenar NaN con 0
+    return failure_history
+
 # Generar un conjunto de datos de aproximadamente 3 millones de registros
-num_records = 3_000_000  # 3 millones
+num_records = 500_000  # 3 millones
 start_year = 2019
 end_year = 2023
 
 df = generate_appliance_usage_data(num_records, start_year, end_year, power_data)
+
+df['Historial de fallos'] = generate_failure_history(df['Reporte de fallo'])
 
 # Guardar el conjunto de datos en un archivo CSV
 df.to_csv("appliance_usage_data21.csv", index=False)

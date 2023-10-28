@@ -80,26 +80,37 @@ def generate_appliance_usage_data(num_records, start_year, end_year, power_data)
 
     # Generar datos de uso basados en 'power_data'
     watts_used = np.random.choice(power_data, size=num_records)
-    
+
+    # Generar un porcentaje de uso basado en la hora
+    # Por ejemplo, puedes hacer que el uso sea más alto durante el día y disminuya por la noche
+    usage_percentage = np.where((hours >= 8) & (hours <= 20), 90, 10)
+
     # Generar la probabilidad y el reporte de fallos
     probability_of_failure = np.random.rand(num_records)
     
     # Aquí generamos el reporte de fallos basado en la probabilidad generada
     report_of_failure = np.random.binomial(1, probability_of_failure)
 
-    # Calcular el porcentaje de fallos para cada fila
-    failure_percentage = report_of_failure * probability_of_failure * 100
+    # Generando un porcentaje de fallo basado en la hora
+    def generate_failure_percentage(hours):
+        # La siguiente fórmula es solo un ejemplo y se puede ajustar según tus necesidades
+        failure_percentage = (np.sin(hours / 24 * 2 * np.pi) + 1) * 25  # Variación diaria
+        return failure_percentage
+
+    # Ejemplo de uso:
+    failure_percentages = generate_failure_percentage(hours)
 
     # Crear el DataFrame
     data = {
         "Fecha": dates,
         "Hora": hours,
         "Watts usados": watts_used,
+        "Porcentaje de uso": usage_percentage,
         "Probabilidad de fallo": probability_of_failure,
-        "Porcentaje de fallos": failure_percentage,
+        "Porcentaje de fallos": failure_percentages,
         "Reporte de fallo": report_of_failure,
     }
-    
+
     df = pd.DataFrame(data)
 
     return df
@@ -112,6 +123,4 @@ end_year = 2023
 df = generate_appliance_usage_data(num_records, start_year, end_year, power_data)
 
 # Guardar el conjunto de datos en un archivo CSV
-df.to_csv("nuevos_datos4.csv", index=False)
-df.to_csv("nuevos_datos5.csv", index=False)
-df.to_csv("nuevos_datos6.csv", index=False)
+df.to_csv("appliance_usage_data1.csv", index=False)
