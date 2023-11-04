@@ -123,4 +123,50 @@ end_year = 2023
 df = generate_appliance_usage_data(num_records, start_year, end_year, power_data)
 
 # Guardar el conjunto de datos en un archivo CSV
-df.to_csv("appliance_usage_data1.csv", index=False)
+file_names = [
+    "washing_machine_343.csv",
+    "internet_router_295.csv",
+    "vacuum_254.csv",
+    "washing_machine_32.csv",
+    'dishwasher_53.csv',
+    'boiler_226.csv',
+    'air_purifier_293.csv',
+    'sound_system_252.csv',
+    '3D_printer_29.csv',
+    'coffee_54.csv',
+    'phone_charger_282.csv',
+    'fridge_207.csv',
+    'radiator_309.csv',
+    'dehumidifier_310.csv',
+    'fridge_317.csv',
+    'micro_wave_oven_314.csv',
+    'laptop_289.csv',
+    'tv_290.csv',
+    'vacuum_236.csv',
+    'screen_302.csv',
+    'dehumidifier_322.csv',
+    'solar_panel_325.csv',
+    'screen_146.csv',
+    'washing_machine_157.csv',
+    'fan_215.csv',
+    'air_conditioner_222.csv',
+    'laptop_64.csv',
+    'coffee_37.csv',
+    'washing_machine_52.csv',
+    'computer_44.csv',
+    'boiler_233.csv',
+    'micro_wave_oven_147.csv',
+    'printer_286.csv',
+    'fridge_284.csv',
+    'coffee_97.csv',
+    'fridge_98.csv',
+    'washing_machine_135.csv',
+    'internet_router_131.csv',
+    'dryer_219.csv',
+    'boiler_217.csv',
+    'washing_machine_218.csv',
+    'freezer_249.csv'
+]
+
+for dataset in file_names:
+    df.to_csv(dataset, index=False)
